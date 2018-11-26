@@ -3,19 +3,19 @@ pipeline {
     stages {
         stage('clone repo') { 
             steps { 
-                bat 'git clone https://github.com/kyamajiRK/my-app.git' 
-                bat 'mvn clean -f my-app'
+               
+                bat 'mvn clean'
             }
         }
         stage('Test'){
             steps {
-                bat 'mvn test -f my-app'
+                bat 'mvn test'
                 
             }
         }
         stage('Deploy') {
             steps {
-                bat 'mvn package -f my-app'
+                bat 'mvn package'
             }
         }
     }
